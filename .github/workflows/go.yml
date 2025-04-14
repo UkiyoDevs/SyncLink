@@ -43,3 +43,4 @@ jobs:
         with:
           files: build/*
           draft: true
+          token: ${{ secrets.ACCESS_TOKEN }}
