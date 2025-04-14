@@ -39,8 +39,11 @@ jobs:
           path: build/*
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: wangyoucao577/go-release-action@1.53
         with:
-          files: build/*
-          draft: true
-          token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          goos: windows
+          goarch: amd64
+          binary_name: "synclink"
+          sha256sum: true
+          
