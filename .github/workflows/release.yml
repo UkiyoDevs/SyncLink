@@ -18,9 +18,10 @@ jobs:
       - name: Release
         uses: wangyoucao577/go-release-action@v1
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: windows
           goarch: amd64
           binary_name: "synclink"
           sha256sum: true
+          extra_files: LICENSE README.md config.json
           
