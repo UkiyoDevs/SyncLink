@@ -39,7 +39,7 @@ jobs:
           path: build/*
 
       - name: Release
-        uses: wangyoucao577/go-release-action@1.53
+        uses: wangyoucao577/go-release-action@v1
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           goos: windows
