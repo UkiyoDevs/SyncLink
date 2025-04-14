@@ -5,6 +5,8 @@ on:
     types:
       - created
 
+permissions: write-all
+
 jobs:
   build:
     name: Build
