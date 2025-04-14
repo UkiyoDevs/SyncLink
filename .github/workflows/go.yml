@@ -1,12 +1,12 @@
-name: CI (Windows)
+name: CI
 
 on:
   release:
-    types: [created] # 表示在创建新的 Release 时触发
+    types: [created]
 
 jobs:
-  build-windows:
-    name: Build & Test on Windows
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
