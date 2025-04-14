@@ -30,10 +30,16 @@ jobs:
           set GOOS=windows
           set GOARCH=amd64
           # 构建
-          go build -o bin/synclink.exe
+          go build -o build/synclink.exe
 
       - name: Upload Windows binary
         uses: actions/upload-artifact@v4
         with:
           name: synclink-windows-amd64
-          path: bin/synclink.exe
+          path: build/synclink.exe
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/*
+          draft: false
