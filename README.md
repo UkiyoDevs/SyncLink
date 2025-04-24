@@ -1,6 +1,6 @@
 # SyncLink
 
-**Inspired by Scoop's `persist` feature, `synclink` helps you manage configuration files or any other folders/files by moving them to a central synchronized directory (like Dropbox, Google Drive, OneDrive, etc.) and creating symbolic links (symlinks) at the original location.**
+**Inspired by Scoop's `persist` and `shortcut` feature, `synclink` helps you manage configuration files or any other folders/files by moving them to a central synchronized directory (like Dropbox, Google Drive, OneDrive, etc.) and creating symbolic links (symlinks) at the original location.**
 
 This is particularly useful for applications that store configuration data in non-standard locations (e.g., `%APPDATA%\Local`), which might not be covered by tools like Scoop's built-in persistence mechanism. `synclink` automates the process of moving these files and linking them back, facilitating easy backup and synchronization across multiple machines.
 
@@ -19,15 +19,17 @@ Tools like [uv](https://github.com/astral-sh/uv) might be installed via Scoop, b
 
 ## Installation
 
-*(Provide instructions here once available. Examples:)*
-
-*   **Download:** Grab the latest executable from the [Releases](https://github.com/your-username/synclink/releases) page.
+*   **Download:** Grab the latest executable from the [Releases](https://github.com/UkiyoDevs/synclink/releases) page.
 *   **Scoop (Recommended):**
     ```powershell
     scoop bucket add scoop-tools https://github.com/xuwenbolan/scoop-tools-bucket
     scoop install synclink
     ```
-*   **Build from Source:** *(Add build instructions if applicable)*
+*   **Build from Source:** 
+    ```
+    go mod download
+    go build -o synclink
+    ```
 
 ## Usage
 
@@ -164,7 +166,7 @@ synclink config get DefaultSyncPath
 
 ## Configuration File
 
-`synclink` stores its configuration (including the list of managed links and settings) in a file located at: *(Specify location, e.g., `%APPDATA%\synclink\config.json` or `%USERPROFILE%\.config\synclink\config.json`)*
+`synclink` stores its configuration (including the list of managed links and settings) in a file located at: `config.json`
 
 Key settings include:
 *   `DefaultSyncPath`: The root directory used for storing linked items if `-s` is not specified during `link`.
